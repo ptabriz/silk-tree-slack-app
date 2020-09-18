@@ -16,10 +16,20 @@
 		"emoji": true
 	},
 	"blocks": [
+      {
+      "type": "image",
+      "title": {
+        "type": "plain_text",
+        "text": "."
+      },
+      "block_id": "image4",
+      "image_url": "https://cdn.glitch.com/32251ea1-fe81-4d9a-ab97-c0710ebb8687%2Fbackyard.jpg?v=16004595",
+      "alt_text": "An incredibly cute kitten."
+    },
 		{
 			"type": "input",
       "block_id": "number",
- 
+
 			"element": {
 				"type": "plain_text_input",
         "action_id": "numberAction",
@@ -49,8 +59,8 @@
           "text": "Select a date"
         }
       }
-    },  
-    {			
+    },
+    {
       "type": "input",
       "block_id": "hourBlock",
 			"label": {
@@ -87,7 +97,7 @@
           }
         }
 				]
-			}},  
+			}},
     {
 			"type": "input",
       "block_id": "commentBlock",
