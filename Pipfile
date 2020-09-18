@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pip="20.0.2"
+pip="*"
 flask = "*"
 gunicorn = "*"
 slackclient = "*"
