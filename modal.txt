@@ -1,0 +1,110 @@
+{
+	"type": "modal",
+	"title": {
+		"type": "plain_text",
+		"text": "Backyard scheduler",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "input",
+      "block_id": "number",
+ 
+			"element": {
+				"type": "plain_text_input",
+        "action_id": "numberAction",
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Enter a number"
+      }
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "How many people your are expecting?",
+				"emoji": true
+			}
+		},
+    {
+      "type": "input",
+      "block_id": "dateBlock",
+      "label": {
+        "type": "plain_text",
+        "text": "Which date you expecting your guests? "
+      },
+      "element": {
+        "type": "datepicker",
+        "action_id": "dateAction",
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Select a date"
+        }
+      }
+    },  
+    {			
+      "type": "input",
+      "block_id": "hourBlock",
+			"label": {
+				"type": "plain_text",
+				"text": "What hour you are expecting your guests?"
+			    },
+			"element": {
+				"type": "static_select",
+        "placeholder":  {
+          "type": "plain_text",
+          "text": "select a time"
+			    },
+				"action_id": "hourAction",
+				"options": [
+					{
+						"value": "A1",
+						"text": {
+							"type": "plain_text",
+							"text": "Morning (before noon)"
+						}
+					},
+					{
+						"value": "A2",
+						"text": {
+							"type": "plain_text",
+							"text": "Afternoon (noon-5pm)"
+						}
+					},
+          {
+          "value": "A3",
+          "text": {
+            "type": "plain_text",
+            "text": "Evening (5-10pm)"
+          }
+        }
+				]
+			}},  
+    {
+			"type": "input",
+      "block_id": "commentBlock",
+      "optional":true,
+			"element": {
+				"type": "plain_text_input",
+        "action_id": "commentAction",
+        "placeholder": {
+        "type": "plain_text",
+        "text": "e.g., I am making bbq, My guests have a dog"
+    }
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Anything else you want roomies to know?",
+				"emoji": true
+		}
+	 }
+  ]
+}
