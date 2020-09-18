@@ -1,5 +1,4 @@
 Flask
-slackclient==2.9.0
 slack==0.0.2
 pip==20.0.2
 gunicorn == 20.0.4
