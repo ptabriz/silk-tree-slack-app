@@ -5,13 +5,14 @@ import json, os
 import datetime
 
 from flask import Flask, request, Response
-from slack import WebClient
-
+# from slack import WebClient
+# from boto.s3.connection import S3Connection
+from slackclient import slackClient
 app = Flask(__name__, template_folder='')
 
 # Set the token from the secret environment variables.
-client = WebClient(token=os.environ.get('TOKEN'))
-
+client = slackClient(token=os.environ.get('TOKEN'))
+print (client)
 @app.route('/', methods=['GET'])
 def main():
   return Response("To get started, remix this project and check out the README file!")
@@ -31,17 +32,17 @@ def interactive():
     day = d.strftime('%A')
     user = payload["user"]["id"]
 
-    if "commentBlock" in getall.keys(): 
+    if "commentBlock" in getall.keys():
       comments =  getall["commentBlock"]["commentAction"]["value"]
       finalComments= "They also mentiond that" + "" + comments
     else:
       finalComments = ""
-      
-    user_text= "Hello <!channel>,\n \n <@{6}> Is having {0} guests in the backyard on {1}, {2} {3} in the {4}. {5}".format(number,day, d.strftime("%B"), d.day, hour.split("(")[0], finalComments, user) 
+
+    user_text= "Hello <!channel>,\n \n <@{6}> Is having {0} guests in the backyard on {1}, {2} {3} in the {4}. {5}".format(number,day, d.strftime("%B"), d.day, hour.split("(")[0], finalComments, user)
     # user_text = comments
     client.chat_postMessage(channel=channelID, text=user_text)
     return Response()
-  
+
 # Step 5: Payload is sent to this endpoint, we extract the `trigger_id` and call views.open
 @app.route('/slashcommand', methods=['GET', 'POST'])
 def slashcommand():
