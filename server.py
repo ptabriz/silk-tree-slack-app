@@ -5,14 +5,14 @@ import json, os
 import datetime
 
 from flask import Flask, request, Response
-# from slack import WebClient
+from slack import WebClient
 # from boto.s3.connection import S3Connection
-from slackclient import SlackClient
+# from slackclient import SlackClient
 
 app = Flask(__name__, template_folder='')
 
 # Set the token from the secret environment variables.
-client = slackClient(token=os.environ.get('TOKEN'))
+client = WebClient(token=os.environ.get('TOKEN'))
 print (client)
 @app.route('/', methods=['GET'])
 def main():

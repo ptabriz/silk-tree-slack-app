@@ -1,3 +1,3 @@
 # from slackclient import SlackClient
-from slack import webClient
-client = SlackClient(token='TOKEN')
+from slack import WebClient
+client = WebClient(token='TOKEN')
