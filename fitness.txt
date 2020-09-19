@@ -1,0 +1,173 @@
+{
+	"type": "modal",
+	"title": {
+		"type": "plain_text",
+		"text": "Fitness scheduler",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": "Submit",
+		"emoji": true
+	},
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "input",
+      "block_id": "hourBlock",
+
+			"element": {
+				"type": "plain_text_input",
+        "action_id": "hourAction",
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Enter an hour e.g., 5pm "
+      }
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "When do you want to start?",
+				"emoji": true
+			}
+		},
+
+
+          {
+      "type": "input",
+      "block_id": "typeBlock",
+			"label": {
+				"type": "plain_text",
+				"text": "What type of activity you have in mind?"
+			    },
+			"element": {
+				"type": "static_select",
+        "placeholder":  {
+          "type": "plain_text",
+          "text": "select a time"
+			    },
+				"action_id": "typeAction",
+				"options": [
+
+					{
+						"value": "B1",
+						"text": {
+							"type": "plain_text",
+							"text": "HIIT training"
+						}
+					},
+
+					{
+						"value": "B2",
+						"text": {
+							"type": "plain_text",
+							"text": "Run"
+						}
+          },
+
+					{
+						"value": "B3",
+						"text": {
+							"type": "plain_text",
+							"text": "Walk"
+						}
+          },
+
+					{
+						"value": "B4",
+						"text": {
+							"type": "plain_text",
+							"text": "Run"
+						}
+					},
+
+
+
+					{
+						"value": "B5",
+						"text": {
+							"type": "plain_text",
+							"text": "Bike ride"
+						}
+          }
+        ]}
+			},
+
+
+		{
+			"type": "input",
+      "block_id": "durationBlock",
+      "optional":true,
+			"element": {
+				"type": "plain_text_input",
+        "action_id": "durationAction",
+        "placeholder": {
+          "type": "plain_text",
+          "text": "1 hour"
+      }
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "How long does it take?",
+				"emoji": true
+			}
+		},
+
+     {
+      "type": "input",
+      "block_id": "coachBlock",
+      "optional":true,
+			"label": {
+				"type": "plain_text",
+				"text": "In case of fitness activity, who is coaching it?"
+			    },
+			"element": {
+				"type": "static_select",
+        "placeholder":  {
+          "type": "plain_text",
+          "text": "select a roomie"
+			    },
+				"action_id": "coachAction",
+				"options": [
+					{
+						"value": "A1",
+						"text": {
+							"type": "plain_text",
+							"text": "Adriana"
+						}
+					},
+					{
+						"value": "A2",
+						"text": {
+							"type": "plain_text",
+							"text": "Ranier"
+						}
+					}
+        ]
+			}},
+
+
+      {
+			"type": "input",
+      "block_id": "locationBlock",
+      "optional":true,
+			"element": {
+				"type": "plain_text_input",
+        "action_id": "locationAction",
+        "placeholder": {
+          "type": "plain_text",
+          "text": "e.g., in the neighborhood, backyard, by the ocean, ..."
+      }
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Where does this happen?",
+				"emoji": true
+			}
+		}
+
+  ]
+}
